@@ -1,5 +1,5 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
-import {ItemDetailsPage} from '../item-details/item-details';
+import {Page, NavController, NavParams} from "ionic-angular";
+import {ItemDetailsPage} from "../item-details/item-details";
 import consts from "../../app.const";
 
 @Page({
@@ -12,17 +12,17 @@ export class ListPage {
 
   constructor(private nav: NavController, navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    this.selectedItem = navParams.get("item");
 
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
+    this.icons = ["flask", "wifi", "beer", "football", "basketball", "paper-plane",
+    "american-football", "boat", "bluetooth", "build"];
 
     this.items = [];
     for(let i = 1; i < 11; i++) {
       this.items.push({
         id: `Item-${i}`,
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
+        title: "Item " + i,
+        note: "This is item #" + i,
         icon: this.icons[Math.floor(Math.random() * this.icons.length)]
       });
     }

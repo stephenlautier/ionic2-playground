@@ -15,3 +15,18 @@ npm install
 gulp build.release
 npm link
 ```
+
+## Serve/Watch
+
+```
+gulp watch
+
+```
+
+
+## Rebuild
+
+```
+gulp rebuild
+
+```

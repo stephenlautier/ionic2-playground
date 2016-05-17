@@ -1,11 +1,10 @@
 import {ViewChild} from "@angular/core";
-import {Location} from "@angular/common";
-import {App, IonicApp, Platform, MenuController, Nav} from 'ionic-angular';
-import {StatusBar} from 'ionic-native';
-import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
-import {ListPage} from './pages/list/list';
-import {ItemDetailsPage} from './pages/item-details/item-details';
-import {Routes, Router, ROUTER_DIRECTIVES} from '@angular/router';
+import {App, IonicApp, Platform, MenuController, Nav} from "ionic-angular";
+import {StatusBar} from "ionic-native";
+import {HelloIonicPage} from "./pages/hello-ionic/hello-ionic";
+import {ListPage} from "./pages/list/list";
+import {ItemDetailsPage} from "./pages/item-details/item-details";
+import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
 import {LOGGER_PROVIDERS, LoggerFactory, ILog} from "ssv-ng2-core";
 import consts from "./app.const";
 
@@ -20,9 +19,9 @@ import consts from "./app.const";
   ]
 })
 @Routes([
-  { path: '/', component: HelloIonicPage },
-  { path: '/items', component: ListPage },
-  { path: '/items/:item', component: ItemDetailsPage },
+  { path: "/", component: HelloIonicPage },
+  { path: "/items", component: ListPage },
+  { path: "/items/:item", component: ItemDetailsPage },
 ])
 class MyApp {
   // make HelloIonicPage the root (or first) page
@@ -36,18 +35,16 @@ class MyApp {
     private app: IonicApp,
     private platform: Platform,
     private menu: MenuController,
-    private loggerFactory: LoggerFactory,
-    private router: Router,
-    private location: Location
+    private loggerFactory: LoggerFactory
   ) {
     this.logger = loggerFactory.getInstance("app");
     this.initializeApp();
     this.logger.debug("ctor", "App initialized...");
-    // set our app's pages
-    
+    // set our app"s pages
+
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: "Hello Ionic", component: HelloIonicPage },
+      { title: "My First List", component: ListPage }
     ];
   }
 
@@ -57,7 +54,6 @@ class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       // this.router.navigate(["/items"]);
-      this.logger.debug(`initializeApp`, this.location.path());
     });
   }
 
