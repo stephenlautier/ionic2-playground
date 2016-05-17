@@ -37,8 +37,8 @@
     "require-dir": "^0.3.0",
     "typescript": "^1.8.9"
   },
-  "name": "ionic2-sample",
-  "description": "ionic2-sample: An Ionic project",
+  "name": "ionic2-playground",
+  "description": "ionic2-playground: An Ionic project",
   "cordovaPlugins": [
     "cordova-plugin-device",
     "cordova-plugin-console",

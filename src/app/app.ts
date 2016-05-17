@@ -57,7 +57,6 @@ class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       // this.router.navigate(["/items"]);
-      debugger;
       this.logger.debug(`initializeApp`, this.location.path());
     });
   }
