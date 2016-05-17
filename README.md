@@ -4,8 +4,11 @@
 
 ```
 npm install
-
 ```
+ - Add symbolic link from `node_modules` to `wwwroot/node_modules`
+ - Setup Ionic repo
+ - Link to ionic local repo
+
 ### Setup ionic official repo locally
 
 ```
