@@ -5,12 +5,13 @@ var tsc = require("gulp-typescript");
 var sourcemaps = require("gulp-sourcemaps");
 var plumber = require("gulp-plumber");
 var sass = require("gulp-sass");
+var copyFonts = require("ionic-gulp-fonts-copy");
 
 var paths = require("../paths");
 
 gulp.task("build", (cb) => {
 	return runSeq(
-		["compile:ts", "compile:sass", "html", "copy:imgs"],
+		["compile:ts", "compile:sass", "html", "copy:imgs", "fonts"],
 		cb);
 });
 
@@ -51,14 +52,12 @@ gulp.task("compile:sass", () => {
 		.pipe(gulp.dest(`${paths.output.dist}/assets`));
 });
 
-
 // html
 gulp.task("html", (cb) => {
 	return runSeq(
 		["compile:html", "compile:index-html"],
 		cb);
 });
-
 
 gulp.task("compile:html", () => {
 	return gulp.src(paths.src.html)
@@ -70,9 +69,15 @@ gulp.task("compile:index-html", () => {
 		.pipe(gulp.dest(paths.output.root));
 });
 
-
 // images
 gulp.task("copy:imgs", () => {
 	return gulp.src(paths.src.imgs)
 		.pipe(gulp.dest(`${paths.output.dist}/assets`));
+});
+
+// fonts
+gulp.task("fonts", () => {
+	return copyFonts({
+		dest: `${paths.output.dist}/assets/fonts`
+	})
 });

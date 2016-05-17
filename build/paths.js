@@ -21,7 +21,11 @@ module.exports = {
 		indexHtml: `./${srcRoot}/index.html`
 	},
 	sass: {
-		includePaths: ["./src/assets/styles"]
+		includePaths: [
+			"./src/assets/styles",
+			"./node_modules/ionic-angular",
+			"./node_modules/ionicons/dist/scss",
+			]
 	},
 	doc: "./doc",
 	packageName: pkg.name
