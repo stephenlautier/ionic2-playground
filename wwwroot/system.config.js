@@ -16,9 +16,7 @@
         "app": "app",
         "test": "test",
         "rxjs": "n:rxjs",
-        "angular2": "n:angular2",
-        "angular2/core": "n:angular2",
-        // "@angular": "n:@angular",
+        "@angular": "n:@angular",
         "angular2-in-memory-web-api": "n:angular2-in-memory-web-api",
         "ssv-ng2-core": "n:ssv-ng2-core",
         "lodash": "n:lodash",
@@ -48,22 +46,18 @@
             main: "dist/index.js",
             defaultExtension: "js"
         },
-        "angular2/core": {
-            main: "core.js",
-            defaultExtension: "js"
-        }
     };
 
     var packageNames = [
-        // "@angular/common",
-        // "@angular/compiler",
-        // "@angular/core",
-        // "@angular/http",
-        // "@angular/platform-browser",
-        // "@angular/platform-browser-dynamic",
-        // "@angular/router",
-        // "@angular/router-deprecated",
-        // "@angular/testing",
+        "@angular/common",
+        "@angular/compiler",
+        "@angular/core",
+        "@angular/http",
+        "@angular/platform-browser",
+        "@angular/platform-browser-dynamic",
+        "@angular/router",
+        "@angular/router-deprecated",
+        "@angular/testing",
         "ionic-angular",
         "lodash",
     ];

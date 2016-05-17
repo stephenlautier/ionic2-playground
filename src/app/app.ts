@@ -3,7 +3,7 @@ import {StatusBar} from 'ionic-native';
 import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
 import {ListPage} from './pages/list/list';
 import {ItemDetailsPage} from './pages/item-details/item-details';
-import {RouteConfig, Location} from 'angular2/router';
+import {RouteConfig} from '@angular/router-deprecated';
 // import {LOGGER_PROVIDERS, LoggerFactory, ILog} from "ssv-ng2-core";
 import consts from "./app.const";
 
@@ -21,7 +21,8 @@ import consts from "./app.const";
 ])
 class MyApp {
   // make HelloIonicPage the root (or first) page
-  rootPage: any;
+  //rootPage: any;
+  rootPage: any = HelloIonicPage;
   pages: Array<{ title: string, component: any }>;
   // private logger: ILog; 
   
