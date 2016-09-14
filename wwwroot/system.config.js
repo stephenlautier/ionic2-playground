@@ -47,6 +47,7 @@
             defaultExtension: "js"
         },
         '@angular/core' : {main: 'bundles/core.umd.min.js'},
+        '@angular/compiler' : {main: 'bundles/compiler.umd.js'},
         '@angular/common' : {main: 'bundles/common.umd.min.js'},
         '@angular/forms' : {main: 'bundles/forms.umd.min.js'},
         '@angular/http' : {main: 'bundles/http.umd.min.js'},
