@@ -6,26 +6,26 @@ import { HomePage } from "./pages/home/home";
 import { AboutPage } from "./pages/about/about";
 import { ContactPage } from "./pages/contact/contact";
 import { deepLinkConfig } from "./shared/route.config";
-import { NavComponent } from "./shared/nav.component"
 import { MyApp } from "./app";
 
 @NgModule({
-  declarations: [
-    TabsPage,
-    HomePage,
-    ContactPage,
-    AboutPage
-  ],
-  imports: [
-    IonicModule.forRoot(NavComponent, null, deepLinkConfig)
-  ],
-  bootstrap: [IonicApp, MyApp],
-  entryComponents: [
-    TabsPage,
-    HomePage,
-    ContactPage,
-    AboutPage
-  ]
+	declarations: [
+		MyApp,
+		TabsPage,
+		HomePage,
+		ContactPage,
+		AboutPage
+	],
+	imports: [
+		IonicModule.forRoot(MyApp, null, deepLinkConfig)
+	],
+	bootstrap: [IonicApp],
+	entryComponents: [
+		TabsPage,
+		HomePage,
+		ContactPage,
+		AboutPage
+	]
 })
 
-export class AppModule {}
+export class AppModule { }
