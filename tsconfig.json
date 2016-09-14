@@ -1,21 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "declaration": false,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "filesGlob": [
-    "**/*.ts",
-    "!node_modules/**/*"
+  "include": [
+    "src/**/*",
+    "typings/**/*"
   ],
   "exclude": [
     "node_modules",
-    "typings/main",
-    "typings/main.d.ts"
-  ],
-  "compileOnSave": false,
-  "atom": {
-    "rewriteTsconfig": false
-  }
+    "wwwroot",
+    "dist"
+  ]
 }

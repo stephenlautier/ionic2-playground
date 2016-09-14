@@ -18,7 +18,7 @@
         "rxjs": "n:rxjs",
         "@angular": "n:@angular",
         "angular2-in-memory-web-api": "n:angular2-in-memory-web-api",
-        "ssv-ng2-core": "n:ssv-ng2-core",
+        "@ssv": "n:@ssv",
         "lodash": "n:lodash",
         "ionic-angular": "n:ionic-angular",
         "ionic-native": "n:ionic-native"
@@ -34,16 +34,12 @@
         },
         "rxjs": {
             defaultExtension: "js"
-        },        
+        },
         "angular2-in-memory-web-api": {
             defaultExtension: "js"
         },
-        "ssv-ng2-core": {
-            main: "_artifact/amd/index.js",
-            defaultExtension: "js"
-        },
-        "ionic-native": {
-            main: "dist/index.js",
+        "@ssv/ng2-core": {
+            main: "dist/amd/index.js",
             defaultExtension: "js"
         },
     };
@@ -52,12 +48,11 @@
         "@angular/common",
         "@angular/compiler",
         "@angular/core",
+        "@angular/forms",
         "@angular/http",
         "@angular/platform-browser",
         "@angular/platform-browser-dynamic",
         "@angular/router",
-        "@angular/router-deprecated",
-        "@angular/testing",
         "ionic-angular",
         "lodash",
     ];

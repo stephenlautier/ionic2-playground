@@ -1,66 +1,43 @@
-import {ViewChild} from "@angular/core";
-import {App, IonicApp, Platform, MenuController, Nav} from "ionic-angular";
-import {StatusBar} from "ionic-native";
-import {HelloIonicPage} from "./pages/hello-ionic/hello-ionic";
-import {ListPage} from "./pages/list/list";
-import {ItemDetailsPage} from "./pages/item-details/item-details";
-import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
-import {LOGGER_PROVIDERS, LoggerFactory, ILog} from "ssv-ng2-core";
-import consts from "./app.const";
+import { Component, ViewChild, } from '@angular/core';
+import { Platform, ionicBootstrap, NavController, Nav } from 'ionic-angular';
+// import {StatusBar} from 'ionic-native';
+import { TabsPage } from './pages/tabs/tabs';
+import { HomePage } from './pages/home/home';
+import { AboutPage } from './pages/about/about';
+import { RouterService, RouteModel } from "./shared/index";
 
-@App({
-  templateUrl: `${consts.basePath}/app.html`,
-  config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
-  directives: [
-    ROUTER_DIRECTIVES
-  ],
-  providers: [
-    LOGGER_PROVIDERS
-  ]
+@Component({
+  moduleId: module.id,
+  templateUrl: 'app.html'
+  // template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
-@Routes([
-  { path: "/", component: HelloIonicPage },
-  { path: "/items", component: ListPage },
-  { path: "/items/:item", component: ItemDetailsPage },
-])
-class MyApp {
-  // make HelloIonicPage the root (or first) page
-  // rootPage: any;
-  rootPage: any = HelloIonicPage;
-  pages: Array<{ title: string, component: any }>;
-  private logger: ILog;
-  @ViewChild(Nav) nav: Nav;
+export class MyApp {
 
-  constructor(
-    private app: IonicApp,
-    private platform: Platform,
-    private menu: MenuController,
-    private loggerFactory: LoggerFactory
-  ) {
-    this.logger = loggerFactory.getInstance("app");
-    this.initializeApp();
-    this.logger.debug("ctor", "App initialized...");
-    // set our app"s pages
+  private rootPage: any;
+  private routes: RouteModel[] = [{
+    component: HomePage,
+    path: '#/home'
+  }, {
+    component: AboutPage,
+    path: '#/about'
 
-    this.pages = [
-      { title: "Hello Ionic", component: HelloIonicPage },
-      { title: "My First List", component: ListPage }
-    ];
-  }
+  }];
+  @ViewChild('myNav') nav: Nav;
+  constructor(private platform: Platform, private routerService: RouterService) {
+    // this.rootPage = HomePage;
+    this.rootPage = TabsPage;
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-      // this.router.navigate(["/items"]);
-    });
-  }
+    routerService.mapRoutes(this.routes);
+    routerService.initialize();
 
-  openPage(page) {
-    // close the menu when clicking a link from the menu
-    this.menu.close();
-    // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
+    // platform.ready().then(() => {
+    //   // Okay, so the platform is ready and our plugins are available.
+    //   // Here you can do any higher level native things you might need.
+    //   StatusBar.styleDefault();
+    // });
   }
 }
+
+ionicBootstrap(MyApp, [
+  RouterService
+]);

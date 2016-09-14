@@ -34,7 +34,7 @@ gulp.task("serve", (cb) => {
 				next();
 			}, historyApiFallback()]
 		},
-		files: ["build/*.*"]
+		files: ["dist/*.*"]
 	}, cb);
 
 });
