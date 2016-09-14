@@ -1,6 +1,6 @@
-import { Component, ViewChild, } from '@angular/core';
-import { Platform, ionicBootstrap, NavController, Nav } from 'ionic-angular';
-// import {StatusBar} from 'ionic-native';
+import { Component, ViewChild } from '@angular/core';
+import { Nav } from 'ionic-angular';
+
 import { TabsPage } from './pages/tabs/tabs';
 import { HomePage } from './pages/home/home';
 import { AboutPage } from './pages/about/about';
@@ -9,7 +9,6 @@ import { RouterService, RouteModel } from "./shared/index";
 @Component({
   moduleId: module.id,
   templateUrl: 'app.html'
-  // template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
 
@@ -23,7 +22,10 @@ export class MyApp {
 
   }];
   @ViewChild('myNav') nav: Nav;
-  constructor(private platform: Platform, private routerService: RouterService) {
+
+  constructor(
+    private routerService: RouterService
+  ) {
     // this.rootPage = HomePage;
     this.rootPage = TabsPage;
 
@@ -38,6 +40,9 @@ export class MyApp {
   }
 }
 
-ionicBootstrap(MyApp, [
-  RouterService
-]);
+
+
+
+
+
+

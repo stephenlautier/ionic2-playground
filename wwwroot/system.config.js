@@ -42,17 +42,15 @@
             main: "dist/amd/index.js",
             defaultExtension: "js"
         },
+        '@angular/core' : {main: 'bundles/core.umd.min.js'},
+        '@angular/common' : {main: 'bundles/common.umd.min.js'},
+        '@angular/forms' : {main: 'bundles/forms.umd.min.js'},
+        '@angular/platform-browser' : {main: 'bundles/platform-browser.umd.min.js'},
+        '@angular/platform-browser-dynamic' : {main: 'bundles/platform-browser-dynamic.umd.min.js'},
+        '@angular/router' : {main: 'bundles/router.umd.min.js'},
     };
 
     var packageNames = [
-        "@angular/common",
-        "@angular/compiler",
-        "@angular/core",
-        "@angular/forms",
-        "@angular/http",
-        "@angular/platform-browser",
-        "@angular/platform-browser-dynamic",
-        "@angular/router",
         "ionic-angular",
         "lodash",
     ];
