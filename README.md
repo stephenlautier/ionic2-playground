@@ -1,35 +1,32 @@
+# ionic2-playground
+
+
 # Getting started
 
 ## Install
 
-```
-npm install
-```
- - Add symbolic link from `node_modules` to `wwwroot/node_modules`
- - Setup Ionic repo
- - Link to ionic local repo
+### Automated
+ - Open powershell within dir **as admin**
+ - run `.\setup.ps1`
+ - run `gulp watch`
 
-### Setup ionic official repo locally
+### Manual
+ - run `npm install`
+ - create symbolic link in `wwwroot` to point to `node_modules`
+ - run `gulp build`
+ - run `gulp watch`
+
+
+## Utils
+
+### Build
 
 ```
-git clone https://github.com/driftyco/ionic.git
-cd ionic
-npm install
-gulp build.release
-npm link
+gulp build
 ```
 
-## Serve/Watch
+### Run/watch
 
 ```
 gulp watch
-
-```
-
-
-## Rebuild
-
-```
-gulp rebuild
-
 ```
