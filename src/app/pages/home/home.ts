@@ -1,4 +1,7 @@
+import { App } from "ionic-angular";
 import { Component } from '@angular/core';
+
+import { AboutPage } from "../about/about";
 
 @Component({
 	moduleId: module.id,
@@ -6,7 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-	constructor() {
+	constructor(
+		public app: App
+	) {
 
 	}
+
+	open() {
+		this.app.getRootNav().setRoot(AboutPage, null, { animate: false, direction: 'back' });
+	}
+
 }

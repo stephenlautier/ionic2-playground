@@ -30,8 +30,9 @@ import { MyApp } from "./app";
 		AboutPage
 	],
 	providers: [
-		{ provide: LocationStrategy, useClass: PathLocationStrategy },
+		{ provide: LocationStrategy, useClass: PathLocationStrategy }
 	]
 })
 
-export class AppModule { }
+export class AppModule {
+}
