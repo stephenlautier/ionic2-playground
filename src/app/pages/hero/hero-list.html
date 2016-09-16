@@ -1,0 +1,18 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Heroes</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding class="heroes">
+	<ion-list>
+		<ion-item *ngFor="let hero of heroes$ | async">
+			<a navPush="hero-detail" [navParams]="{ hero: hero.key }">
+				{{hero.name}}
+			</a>
+		</ion-item>
+	</ion-list>
+	<div>
+		<a navPush="home">Back to Home</a>
+	</div>
+</ion-content>
