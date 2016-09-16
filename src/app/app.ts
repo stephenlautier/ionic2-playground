@@ -1,20 +1,18 @@
 import { Component } from "@angular/core";
 
+import { HomePage } from "./pages/home/home";
+
 @Component({
 	moduleId: module.id,
 	templateUrl: "app.html"
 })
 export class MyApp {
 
+	rootPage: any;
+
 	constructor(
 	) {
-		// this.rootPage = HomePage;
-
-		// platform.ready().then(() => {
-		//   // Okay, so the platform is ready and our plugins are available.
-		//   // Here you can do any higher level native things you might need.
-		//   StatusBar.styleDefault();
-		// });
+		this.rootPage = HomePage;
 	}
 }
 
