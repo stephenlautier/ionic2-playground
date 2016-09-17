@@ -24,33 +24,23 @@
 
 	// packages tells the System loader how to load when no filename and/or no extension
 	var packages = {
-		"app": {
-			defaultExtension: "js"
-		},
-		"test": {
-			defaultExtension: "js"
-		},
-		"rxjs": {
-			defaultExtension: "js"
-		},
-		"angular2-in-memory-web-api": {
-			defaultExtension: "js"
-		},
-		"@ssv/ng2-core": {
-			main: "dist/amd/index.js",
-			defaultExtension: "js"
-		},
-		"ionic-angular": {
-			main: "commonjs/index.js",
-			defaultExtension: "js"
-		},
-		'@angular/core': { main: 'bundles/core.umd.min.js' },
-		'@angular/compiler': { main: 'bundles/compiler.umd.js' },
-		'@angular/common': { main: 'bundles/common.umd.min.js' },
-		'@angular/forms': { main: 'bundles/forms.umd.min.js' },
-		'@angular/http': { main: 'bundles/http.umd.min.js' },
-		'@angular/platform-browser': { main: 'bundles/platform-browser.umd.min.js' },
-		'@angular/platform-browser-dynamic': { main: 'bundles/platform-browser-dynamic.umd.min.js' },
+		"app": { defaultExtension: "js" },
+		"test": { defaultExtension: "js" },
+
+		// angular
+		"@angular/core": { main: "bundles/core.umd.min.js" },
+		"@angular/compiler": { main: "bundles/compiler.umd.js" },
+		"@angular/common": { main: "bundles/common.umd.min.js" },
+		"@angular/forms": { main: "bundles/forms.umd.min.js" },
+		"@angular/http": { main: "bundles/http.umd.min.js" },
+		"@angular/platform-browser": { main: "bundles/platform-browser.umd.min.js" },
+		"@angular/platform-browser-dynamic": { main: "bundles/platform-browser-dynamic.umd.min.js" },
+
+		// vendors
+		"raven-js": { main: "raven.min.js", defaultExtension: "js" },
+		"ionic-angular": { main: "commonjs/index.js", defaultExtension: "js" },
+		"rxjs": { defaultExtension: "js" },
+		"@ssv/ng2-core": { main: "dist/amd/index.js", defaultExtension: "js" },
 	};
 
 	var packageNames = [
