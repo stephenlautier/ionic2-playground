@@ -38,8 +38,8 @@
 
 		// vendors
 		"raven-js": { main: "raven.min.js", defaultExtension: "js" },
-		"ionic-angular": { main: "commonjs/index.js", defaultExtension: "js" },
 		"rxjs": { defaultExtension: "js" },
+		"ionic-angular": { main: "commonjs/index.js", defaultExtension: "js" },
 		"@ssv/ng2-core": { main: "dist/amd/index.js", defaultExtension: "js" },
 	};
 
